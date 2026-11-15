@@ -1,11 +1,13 @@
 ---
-title: "GUI"
+title: "GUI (Power Type)"
+nav_title: "GUI"
 description: "A custom screen built from images, text, buttons, sliders, entity previews and item slots."
-type_id: "aea:gui"
 order: 1
 ---
 
 Defines a screen the player can open. The screen is a list of elements placed on a panel. Buttons and sliders run actions, and slots hold real items that other actions and conditions can read, change and craft with.
+
+Type ID: `aea:gui`
 
 The power does nothing until something opens it with the `aea:open_gui` action. See [Opening the screen](#opening-the-screen).
 
@@ -84,7 +86,7 @@ Draws a texture, or part of one. With `progress` it works as a progress bar. The
 | `progress_invert` | Boolean | `false` | Fills from the opposite side. |
 
 > [!NOTE]
-> Textures are loaded by the player's game. A texture that is not part of Minecraft has to come from a resource pack or a mod.
+> A texture that is not part of Minecraft has to come from somewhere. Put it in the data pack as a [data pack texture](/features/data_pack_textures), or ship it in a resource pack or a mod.
 
 ### `aea:text`
 

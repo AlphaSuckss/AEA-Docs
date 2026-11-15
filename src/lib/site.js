@@ -11,6 +11,7 @@ export const site = {
 
 /** Sidebar sections, in order. `dir` is the folder under src/content ('' is the top level). */
 export const sections = [
-	{ dir: '', label: 'Getting started' },
-	{ dir: 'powers', label: 'Power types' }
+	{ dir: '', label: 'Introduction' },
+	{ dir: 'powers', label: 'Powers' },
+	{ dir: 'features', label: 'Features' }
 ];

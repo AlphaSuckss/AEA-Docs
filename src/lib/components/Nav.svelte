@@ -7,15 +7,13 @@
 
 <nav aria-label="Pages">
 	{#each nav as section}
-		<div class="nav-section">
-			<p class="nav-label">{section.label}</p>
-			<ul class="nav-list">
-				{#each section.pages as page}
-					<li>
-						<a href={href(base, page)} aria-current={page.slug === current ? 'page' : undefined}>{page.navTitle}</a>
-					</li>
-				{/each}
-			</ul>
-		</div>
+		<p class="nav-label">{section.label}</p>
+		<ul class="nav-list">
+			{#each section.pages as page}
+				<li>
+					<a href={href(base, page)} aria-current={page.slug === current ? 'page' : undefined}>{page.navTitle}</a>
+				</li>
+			{/each}
+		</ul>
 	{/each}
 </nav>

@@ -8,7 +8,7 @@
 	import { site } from '$lib/site.js';
 
 	let { children } = $props();
-	let menu = $state();
+	let menuOpen = $state(false);
 	let dark = $state(false);
 
 	const current = $derived((page.params.slug ?? '').replace(/\/$/, ''));
@@ -48,28 +48,28 @@
 	}
 
 	afterNavigate(() => {
-		if (menu) menu.open = false;
+		menuOpen = false;
 		readTheme();
 		addCopyButtons();
 	});
 </script>
 
-<header class="site-header">
+<header class="navbar">
+	<button class="icon-button menu-button" type="button" aria-label="Pages" aria-expanded={menuOpen} onclick={() => (menuOpen = !menuOpen)}>
+		<svg viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M4 7h22M4 15h22M4 23h22" /></svg>
+	</button>
 	<a class="brand" href="{base}/">
-		<img src="{base}/wordmark.png" alt="AEA" width="76" height="28" />
-		<span>docs</span>
+		<img src="{base}/wordmark.png" alt="AEA" width="65" height="24" />
+		<span>Docs</span>
 	</a>
-	<button class="theme-toggle" type="button" onclick={toggleTheme}>{dark ? 'Light theme' : 'Dark theme'}</button>
-	<a class="header-link" href={site.repo} target="_blank" rel="noopener">GitHub</a>
+	<a class="navbar-link" href={site.repo} target="_blank" rel="noopener">GitHub</a>
+	<button class="icon-button" type="button" aria-label={dark ? 'Switch to the light theme' : 'Switch to the dark theme'} onclick={toggleTheme}>
+		<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 2v16a8 8 0 0 1 0-16Z" /></svg>
+	</button>
 </header>
 
-<details class="menu" bind:this={menu}>
-	<summary>All pages</summary>
-	<Nav {current} />
-</details>
-
 <div class="frame">
-	<aside class="sidebar">
+	<aside class="sidebar" class:open={menuOpen}>
 		<Nav {current} />
 	</aside>
 	{@render children()}

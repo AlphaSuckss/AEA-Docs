@@ -5,6 +5,8 @@ description: "AEA lets origin packs made for Origins on Fabric 1.20.1 run on Ove
 order: 1
 ---
 
+AEA (Alpha's Everything Addon) lets origin packs made for Origins on Fabric 1.20.1 run on Overgrown's Origins for NeoForge 1.21.1, without editing them. It also adds power types of its own.
+
 ## Why AEA exists
 
 Most origin packs were written for [Origins](https://www.curseforge.com/minecraft/mc-mods/origins) 1.10.2 on Fabric 1.20.1. [Overgrown's Origins](https://www.curseforge.com/minecraft/mc-mods/o-origins) brings Origins to NeoForge 1.21.1, but those packs do not load on it as they are, for two reasons:
@@ -26,6 +28,8 @@ AEA started as an Origins addon for Fabric 1.20.1. This version carries its own 
     - [GUI](/powers/gui): custom screens with buttons, sliders, item slots and crafting.
     - [Mob AI](/powers/mob_ai) and [Mob Pathing](/powers/mob_pathing): new behaviours and pathfinding rules for mobs.
     - [Velocity Immunity](/powers/velocity_immunity): protection from `add_velocity` actions.
+    - [Hitbox Part](/powers/hitbox_part): extra hit boxes for models that are larger than the player.
+- **Carries textures in data packs.** PNG files in a data pack are sent to players, so powers can use them without a resource pack. See [Data pack textures](/features/data_pack_textures).
 
 ## Requirements
 
@@ -37,16 +41,11 @@ AEA started as an Origins addon for Fabric 1.20.1. This version carries its own 
 | Required mods | Overgrown's Apoli and Overgrown's Origins |
 | Optional | Pehkui. Without it, AEA adds its own `/scale` command so packs that use it still work. |
 
-Install AEA on both the client and the server. It is built and tested against Overgrown's Apoli 1.124.0 and Origins 1.49.0.
-
 ## Using an old pack
 
 1. Put the pack in the world's `datapacks` folder, the same way as on 1.20.1.
 2. Start the world. AEA converts the pack while it loads. The files on disk are not changed.
 3. If something does not work, look in the game log for errors that name the pack, then run `/aea validate`. It checks every command inside the converted powers and writes the ones that fail to the log.
-
-> [!NOTE]
-> Packs that use items or blocks from other mods still need those mods installed. A few Fabric-only features have no NeoForge equivalent and are skipped: Trinkets slots, and the Jade and AspectsLib parts of Sync.
 
 ## Commands
 
@@ -61,12 +60,13 @@ The `/aea` commands need operator permission.
 
 ## Settings
 
-The file `config/aea-common.toml` has two settings under `legacy_datapacks`:
+The settings are in `config/aea-common.toml`.
 
 | Setting | Default | What it does |
 | --- | --- | --- |
-| `enabled` | `true` | Turns the conversion of old packs on or off. |
-| `log_rewrites` | `false` | Writes every command AEA rewrites to the log. Useful when reporting a pack that breaks. |
+| `legacy_datapacks.enabled` | `true` | Turns the conversion of old packs on or off. |
+| `legacy_datapacks.log_rewrites` | `false` | Writes every command AEA rewrites to the log. Useful when reporting a pack that breaks. |
+| `data_pack_textures.enabled` | `true` | Turns [data pack textures](/features/data_pack_textures) on or off. |
 
 ## Credits
 
