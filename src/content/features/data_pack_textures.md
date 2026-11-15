@@ -51,7 +51,7 @@ Data pack textures work wherever the game looks a texture up by its ID at the mo
 - images, buttons and sliders in an [`aea:gui`](/powers/gui),
 - screen overlays.
 
-They do not work for block and item textures, models, sounds, fonts or language files. The game builds those once when resources load, so they still need a resource pack.
+They do not work for block and item textures, models, sounds, fonts or language files. The game builds those once when resources load. For those, put the files in the pack's `assets` folder as [data pack assets](/features/data_pack_assets).
 
 > [!NOTE]
 > A HUD bar that sets `fallback` in its `hud_render` ignores a data pack texture and draws the fallback, because that check only looks in resource packs. Leave `fallback` out when the bar's `sprite_location` is a data pack texture.
@@ -78,7 +78,7 @@ In texture mode the whole power works from the data pack:
 Draws `data/mypack/textures/entity/ember_skin.png` over the skin of the entity that has the power. Players need no resource pack to see it.
 
 > [!WARNING]
-> In geometry mode only the texture can come from the data pack. The model file (`.geo.json`) and its animation files are read from resource packs, so a custom model still needs a resource pack for those.
+> In geometry mode a data pack texture only covers the texture. The model file (`.geo.json`) and its animation files are read with the game's resources, so put those in the pack's `assets` folder as [data pack assets](/features/data_pack_assets#with-custom-model-render).
 
 ## How it works
 
@@ -93,7 +93,7 @@ If a resource pack on the player's game has a texture with the same ID, the reso
 
 | Limit | Value |
 | --- | --- |
-| Format | PNG. Animated textures (`.mcmeta` files) are not supported. |
+| Format | PNG. Animated textures (`.mcmeta` files) are not supported here; use [data pack assets](/features/data_pack_assets) for those. |
 | Size of one file | 2 MB |
 | Size of one image | 4096 by 4096 pixels |
 | Number of files | 1024 |

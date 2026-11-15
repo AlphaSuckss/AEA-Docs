@@ -29,7 +29,7 @@ AEA started as an Origins addon for Fabric 1.20.1. This version carries its own 
     - [Mob AI](/powers/mob_ai) and [Mob Pathing](/powers/mob_pathing): new behaviours and pathfinding rules for mobs.
     - [Velocity Immunity](/powers/velocity_immunity): protection from `add_velocity` actions.
     - [Hitbox Part](/powers/hitbox_part): extra hit boxes for models that are larger than the player.
-- **Carries textures in data packs.** PNG files in a data pack are sent to players, so powers can use them without a resource pack. See [Data pack textures](/features/data_pack_textures).
+- **Carries assets in data packs.** Textures, models, sounds and the rest of a resource pack can ship inside the data pack and are sent to players, so they install nothing. See [Data pack textures](/features/data_pack_textures) and [Data pack assets](/features/data_pack_assets).
 
 ## Requirements
 
@@ -67,6 +67,7 @@ The settings are in `config/aea-common.toml`.
 | `legacy_datapacks.enabled` | `true` | Turns the conversion of old packs on or off. |
 | `legacy_datapacks.log_rewrites` | `false` | Writes every command AEA rewrites to the log. Useful when reporting a pack that breaks. |
 | `data_pack_textures.enabled` | `true` | Turns [data pack textures](/features/data_pack_textures) on or off. |
+| `data_pack_assets.enabled` | `true` | Turns [data pack assets](/features/data_pack_assets) on or off. |
 
 ## Credits
 
