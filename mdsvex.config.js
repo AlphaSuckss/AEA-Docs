@@ -38,28 +38,11 @@ function links() {
 		});
 }
 
-const cells = (row, tag) => (row.children ?? []).filter((cell) => cell.tagName === tag);
-
-/** Copies each column heading onto its cells, so a phone can show a row as a labelled stack. */
-function labelCells(table) {
-	const rows = [];
-	visit(table, (node) => node.tagName === 'tr' && rows.push(node));
-	const headings = rows.flatMap((row) => cells(row, 'th')).map((cell) => text(cell).trim());
-	for (const row of rows) {
-		const data = cells(row, 'td');
-		// The first cell names the row and the last one describes it; only the ones between need a label.
-		data.slice(1, -1).forEach((cell, i) => {
-			if (headings[i + 1]) cell.properties = { ...cell.properties, dataLabel: headings[i + 1] };
-		});
-	}
-}
-
 /** Wide tables scroll sideways inside their own box instead of stretching the page. */
 function scrollableTables() {
 	return (tree) =>
 		visit(tree, (node, parent, index) => {
 			if (node.tagName !== 'table' || !parent || parent.properties?.className === 'table-scroll') return;
-			labelCells(node);
 			parent.children[index] = {
 				type: 'element',
 				tagName: 'div',

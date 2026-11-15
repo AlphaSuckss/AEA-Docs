@@ -43,7 +43,6 @@ function toPage(file) {
 		title: data.title ?? slug,
 		navTitle: data.nav_title ?? data.title ?? slug,
 		description: data.description ?? '',
-		typeId: data.type_id ?? null,
 		order: Number(data.order ?? 100),
 		headings: headings(body)
 	};

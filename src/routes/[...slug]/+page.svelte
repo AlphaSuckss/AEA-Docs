@@ -17,19 +17,17 @@
 
 <div class="main">
 	<article>
-		<header class="page-head">
-			<h1>{doc.title}</h1>
-			{#if doc.description}<p class="lede">{doc.description}</p>{/if}
-			{#if doc.typeId}
-				<div class="item-tooltip">
-					<div class="item-tooltip-body">
-						<span class="item-tooltip-name">{doc.typeId}</span>
-						<span class="item-tooltip-kind">Power type</span>
-						<span class="item-tooltip-mod">AEA</span>
-					</div>
-				</div>
+		<ol class="breadcrumbs" aria-label="Breadcrumbs">
+			<li>
+				<a href="{base}/" aria-label="Home">
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" /></svg>
+				</a>
+			</li>
+			{#if doc.slug}
+				<li><span>{data.section}</span></li>
+				<li><span aria-current="page">{doc.navTitle}</span></li>
 			{/if}
-		</header>
+		</ol>
 
 		{#if doc.headings.length > 1}
 			<details class="toc-inline">
@@ -42,11 +40,14 @@
 			</details>
 		{/if}
 
+		<h1>{doc.title}</h1>
+
 		<div class="prose">
 			<Content />
 		</div>
 
 		<footer class="page-foot">
+			<p class="edit"><a href={editUrl} target="_blank" rel="noopener">Edit this page</a></p>
 			<div class="pager">
 				{#if data.previous}
 					<a href={href(base, data.previous)}><small>Previous</small>{data.previous.navTitle}</a>
@@ -55,13 +56,11 @@
 					<a class="next" href={href(base, data.next)}><small>Next</small>{data.next.navTitle}</a>
 				{/if}
 			</div>
-			<p class="edit"><a href={editUrl} target="_blank" rel="noopener">Edit this page on GitHub</a></p>
 		</footer>
 	</article>
 
 	{#if doc.headings.length > 1}
 		<aside class="toc" aria-label="On this page">
-			<p class="toc-title">On this page</p>
 			<ul>
 				{#each doc.headings as heading}
 					<li class="depth-{heading.depth}"><a href="#{heading.id}">{heading.label}</a></li>

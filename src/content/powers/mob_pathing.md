@@ -1,11 +1,13 @@
 ---
-title: "Mob Pathing"
+title: "Mob Pathing (Power Type)"
+nav_title: "Mob Pathing"
 description: "Changes the routes a mob plans: how high it steps, how far it drops, and which blocks it avoids."
-type_id: "aea:mob_pathing"
 order: 3
 ---
 
 Changes how the mob that has the power finds its way. It can plan routes up taller steps and down longer drops, keep following a path while in the air, and treat chosen blocks as preferred, costly or impassable.
+
+Type ID: `aea:mob_pathing`
 
 The power only works on mobs. If a mob has several active `aea:mob_pathing` powers, the first one is used.
 

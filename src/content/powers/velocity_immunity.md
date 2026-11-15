@@ -1,11 +1,13 @@
 ---
-title: "Velocity Immunity"
+title: "Velocity Immunity (Power Type)"
+nav_title: "Velocity Immunity"
 description: "Stops add_velocity actions from moving the entity that has the power."
-type_id: "aea:velocity_immunity"
 order: 4
 ---
 
 While this power is active, `apoli:add_velocity` actions aimed at the entity do nothing. The power covers both forms of the action: the entity action, and the bi-entity action when the entity is the target.
+
+Type ID: `aea:velocity_immunity`
 
 Only that action is blocked. Knockback from attacks, explosions, pistons and other movement still apply.
 

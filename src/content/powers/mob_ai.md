@@ -1,11 +1,13 @@
 ---
-title: "Mob AI"
+title: "Mob AI (Power Type)"
+nav_title: "Mob AI"
 description: "Gives a mob new goals and targets, removes vanilla ones, and controls what it may attack."
-type_id: "aea:mob_ai"
 order: 2
 ---
 
 Changes the behaviour of the mob that has the power. It can add goals such as following, fleeing or attacking, remove the mob's vanilla goals, stop it from ever targeting certain entities, and set its attack damage.
+
+Type ID: `aea:mob_ai`
 
 The power only works on mobs, not on players. Give it to a mob the same way as any other power, for example with `/power grant`. Everything it changed is put back when the power is removed, or while the power's `condition` does not hold.
 
