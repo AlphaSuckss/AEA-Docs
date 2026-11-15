@@ -45,12 +45,40 @@ A [GUI](/powers/gui) whose background is a texture from the data pack.
 
 Data pack textures work wherever the game looks a texture up by its ID at the moment it draws:
 
+- the textures of [`apoli:custom_model_render`](https://0vergrown.github.io/Handbook/docs/datapack/powers/custom_model_render), covered [below](#with-custom-model-render),
 - entity texture overlays, such as `sync:entity_texture_overlay`,
 - the bars of HUD resources,
 - images, buttons and sliders in an [`aea:gui`](/powers/gui),
 - screen overlays.
 
 They do not work for block and item textures, models, sounds, fonts or language files. The game builds those once when resources load, so they still need a resource pack.
+
+> [!NOTE]
+> A HUD bar that sets `fallback` in its `hud_render` ignores a data pack texture and draws the fallback, because that check only looks in resource packs. Leave `fallback` out when the bar's `sprite_location` is a data pack texture.
+
+## With Custom Model Render
+
+Overgrown's [`apoli:custom_model_render`](https://0vergrown.github.io/Handbook/docs/datapack/powers/custom_model_render) re-skins an entity with a texture, or draws a Blockbench model on it. Every texture field of that power takes a data pack texture:
+
+| Mode | Fields |
+| --- | --- |
+| `texture` | `texture_location`, `wide_texture_location`, `slim_texture_location` |
+| `geometry` | `texture_location` |
+
+In texture mode the whole power works from the data pack:
+
+```json
+{
+    "type": "apoli:custom_model_render",
+    "texture_location": "mypack:textures/entity/ember_skin.png",
+    "render_as_overlay": true
+}
+```
+
+Draws `data/mypack/textures/entity/ember_skin.png` over the skin of the entity that has the power. Players need no resource pack to see it.
+
+> [!WARNING]
+> In geometry mode only the texture can come from the data pack. The model file (`.geo.json`) and its animation files are read from resource packs, so a custom model still needs a resource pack for those.
 
 ## How it works
 
