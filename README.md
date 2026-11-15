@@ -44,9 +44,10 @@ order: 2
 
 - `order` sets the position in the sidebar.
 - `nav_title` gives the sidebar a shorter name than the title.
-- `type_id`, for example `"aea:mob_ai"`, adds the type ID box under the title.
 
-Files in `src/content/powers/` appear under "Power types". To add another section, create a folder and list it in `src/lib/site.js`.
+Power pages are titled like `"Mob AI (Power Type)"`, with the short name in `nav_title`, and give the type on a `Type ID:` line after the opening paragraph.
+
+Files in `src/content/powers/` appear under "Powers" and files in `src/content/features/` under "Features". To add another section, create a folder and list it in `src/lib/site.js`.
 
 ## License
 
