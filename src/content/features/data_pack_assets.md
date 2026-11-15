@@ -64,11 +64,19 @@ Draws the model `assets/mypack/geo/tail.geo.json` with the texture `assets/mypac
 1. When data packs load, the server reads the `assets` folder of every enabled pack in the world's `datapacks` folder. If two packs have the same file, the pack that loads later wins.
 2. When a player joins, and after `/reload`, the server sends the list of files.
 3. The player's game downloads the files it does not have yet and keeps them in the `aea-asset-cache` folder of the game directory. A file is only downloaded again when it changes.
-4. The game reloads its resources with the files added as a resource pack named "Data pack assets". The pack is always on and sits above the player's other packs.
-5. When the player leaves, the pack is taken away and resources reload again.
+4. The game reloads its resources with the files added as a resource pack named "Data pack assets". This only happens when the files are new or have changed. The pack is always on and sits above the player's other packs.
+5. The pack stays loaded when the player leaves, and the next time the game starts it loads with everything else. Joining the same world or server again reloads nothing.
 
 > [!NOTE]
-> The reload shows the same loading bar as a server resource pack, and it happens on every join. On a large modpack it can take a while. When a pack only needs plain textures, [data pack textures](/features/data_pack_textures) avoid it.
+> The first join with new or changed assets shows the loading bar once, like a server resource pack. After that there is no reload on joining, on leaving or when the game starts.
+
+## Leftover packs
+
+Because the pack stays loaded, a player still has it on other worlds and servers until one of them sends a different set of assets. A pack that only adds files of its own does no harm there.
+
+A pack that replaces files of another pack, such as a vanilla texture, is different. It is removed as soon as the player joins a world or server that runs AEA and has no assets of its own.
+
+To remove the pack by hand, close the game and delete the `aea-asset-cache` folder in the game directory.
 
 ## Limits
 
