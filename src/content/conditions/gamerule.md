@@ -7,7 +7,7 @@ order: 1
 
 Checks the value of a gamerule. It works with [data pack gamerules](/features/gamerules) and with vanilla gamerules.
 
-This condition works in every context that has a world: entity, bi-entity, block, item, damage, fluid and biome conditions.
+This condition works in every condition context: entity, bi-entity, block, item, damage, fluid, biome and static conditions. A static condition reads the server's value.
 
 Type ID: `aea:gamerule`
 
