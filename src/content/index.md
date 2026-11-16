@@ -32,7 +32,7 @@ AEA started as an Origins addon for Fabric 1.20.1. This version carries its own 
     - [See Invisible](/powers/see_invisible): see invisible entities, at a chosen opacity.
     - [Milk Immunity](/powers/milk_immunity): keep status effects when drinking milk.
 - **Lets packs add gamerules.** Server owners switch pack features on or off with `/gamerule`, such as whether an origin's explosions break blocks. See [Data pack gamerules](/features/gamerules).
-- **Extends Apoli types.** `apoli:effect_immunity` and `apoli:status_effect` take an [`effect_type`](/features/effect_type), and powers can be grouped in [power tags](/features/power_tags).
+- **Extends Apoli types.** `apoli:effect_immunity` and `apoli:status_effect` take an [`effect_type`](/features/effect_type).
 - **Carries assets in data packs.** Textures, models, sounds and the rest of a resource pack can ship inside the data pack and are sent to players, so they install nothing. See [Data pack textures](/features/data_pack_textures) and [Data pack assets](/features/data_pack_assets).
 
 ## Requirements
