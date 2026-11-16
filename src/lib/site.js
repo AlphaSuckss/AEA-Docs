@@ -13,5 +13,6 @@ export const site = {
 export const sections = [
 	{ dir: '', label: 'Introduction' },
 	{ dir: 'powers', label: 'Powers' },
+	{ dir: 'conditions', label: 'Conditions' },
 	{ dir: 'features', label: 'Features' }
 ];
