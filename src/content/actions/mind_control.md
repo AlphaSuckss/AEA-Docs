@@ -7,7 +7,7 @@ order: 1
 
 The actor takes control of the target. The actor must be a player; the target can be any mob or another player. While in control, the player sees through the target's eyes, and their keys and mouse move the target, swing and use its hands, pick its hotbar slot and so on.
 
-It works at any distance and in any dimension. The player's mind follows the target, and their body stays where they stood, wearing their skin, armour and held items. The body can be hit, and every hit on it lands on the player. If a hit would kill them, control ends first and they die in their body.
+It works at any distance and in any dimension. The player's mind follows the target, and their body stays where they stood, wearing their skin, armour and held items. By default the body can be hit, and every hit on it lands on the player. If a hit would kill them, control ends first and they die in their body. The target takes its own damage as usual; with `share_damage`, part of it reaches the controlling player too.
 
 Control ends when:
 
@@ -33,6 +33,8 @@ Type ID: `aea:mind_control`
 | `struggle` | Integer | _optional_ | A controlled player breaks free after pressing this many of the keys the controller has taken. Without it, they can't struggle free. |
 | `kill_credit` | Boolean | `false` | When `true`, the controlling player gets the kill if the target dies to a fall, lava or anything else with no attacker. Kills the target makes read "X was slain by Target (controlled by Player)". |
 | `close_screens` | Boolean | `false` | When `true`, chests and other containers the target opens are closed straight away. |
+| `body_damage` | Boolean | `true` | Whether the controlling player's body can be hurt. When `false`, it only takes damage nothing can resist, such as falling into the void or `/kill`. |
+| `share_damage` | Float | `0` | How much of the damage the target takes also hits the controlling player: `0.5` passes on half, `1` all of it. The target still takes its full damage. Counted before the target's armour; the player's own armour then applies. |
 | `on_start` | [Bi-entity Action Type](https://0vergrown.github.io/Handbook/docs/datapack/bientity-actions) | _optional_ | Runs when control starts, with the controlling player as the actor. |
 | `on_release` | [Bi-entity Action Type](https://0vergrown.github.io/Handbook/docs/datapack/bientity-actions) | _optional_ | Runs when control ends, if both are still there. |
 
