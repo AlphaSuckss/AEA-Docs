@@ -21,10 +21,15 @@ function visit(node, fn, parent = null, index = 0) {
 
 const text = (node) => (node.type === 'text' ? node.value : (node.children ?? []).map(text).join(''));
 
-/** Internal links get the site's base path; external links open in a new tab. */
+/** Internal links and images get the site's base path; external links open in a new tab. */
 function links() {
 	return (tree) =>
 		visit(tree, (node) => {
+			if (node.tagName === 'img' && typeof node.properties?.src === 'string' && node.properties.src.startsWith('/')) {
+				node.properties.src = BASE + node.properties.src;
+				node.properties.loading = 'lazy';
+				return;
+			}
 			if (node.tagName !== 'a' || typeof node.properties?.href !== 'string') return;
 			const href = node.properties.href;
 			if (/^https?:/.test(href)) {
