@@ -34,6 +34,7 @@ AEA started as an Origins addon for Fabric 1.20.1. This version carries its own 
     - [Prevent Spawn Point](/powers/prevent_spawn_point): stop beds, anchors and commands from setting the spawn point.
 - **Lets packs add gamerules.** Server owners switch pack features on or off with `/gamerule`, such as whether an origin's explosions break blocks. See [Data pack gamerules](/features/gamerules).
 - **Extends Apoli types.** `apoli:effect_immunity` and `apoli:status_effect` take an [`effect_type`](/features/effect_type).
+- **Shows origins in a grid.** The choose-origin screen lists every origin at once. See [Origin grid](/features/origin_grid).
 - **Carries assets in data packs.** Textures, models, sounds and the rest of a resource pack can ship inside the data pack and are sent to players, so they install nothing. See [Data pack textures](/features/data_pack_textures) and [Data pack assets](/features/data_pack_assets).
 
 ## Requirements
