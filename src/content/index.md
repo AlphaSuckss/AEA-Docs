@@ -32,6 +32,7 @@ AEA started as an Origins addon for Fabric 1.20.1. This version carries its own 
     - [See Invisible](/powers/see_invisible): see invisible entities, at a chosen opacity.
     - [Milk Immunity](/powers/milk_immunity): keep status effects when drinking milk.
     - [Prevent Spawn Point](/powers/prevent_spawn_point): stop beds, anchors and commands from setting the spawn point.
+- **Adds mind control.** A player can take over a mob or another player, at any distance and in any dimension. See [Mind Control](/actions/mind_control).
 - **Lets packs add gamerules.** Server owners switch pack features on or off with `/gamerule`, such as whether an origin's explosions break blocks. See [Data pack gamerules](/features/gamerules).
 - **Extends Apoli types.** `apoli:effect_immunity` and `apoli:status_effect` take an [`effect_type`](/features/effect_type).
 - **Shows origins in a grid.** The choose-origin screen lists every origin at once. See [Origin grid](/features/origin_grid).
