@@ -33,6 +33,7 @@ AEA started as an Origins addon for Fabric 1.20.1. This version carries its own 
     - [Milk Immunity](/powers/milk_immunity): keep status effects when drinking milk.
     - [Prevent Spawn Point](/powers/prevent_spawn_point): stop beds, anchors and commands from setting the spawn point.
 - **Adds mind control.** A player can take over a mob or another player, at any distance and in any dimension. See [Mind Control](/actions/mind_control).
+- **Works with guns and spells.** With [TaCZ](/tacz/overview) installed, powers can change gun stats, block gun use and react to shots. With [Spell Engine](/spell_engine/overview), powers can give, cast, block and change spells.
 - **Lets packs add gamerules.** Server owners switch pack features on or off with `/gamerule`, such as whether an origin's explosions break blocks. See [Data pack gamerules](/features/gamerules).
 - **Extends Apoli types.** `apoli:effect_immunity` and `apoli:status_effect` take an [`effect_type`](/features/effect_type).
 - **Shows origins in a grid.** The choose-origin screen lists every origin at once. See [Origin grid](/features/origin_grid).
@@ -46,7 +47,7 @@ AEA started as an Origins addon for Fabric 1.20.1. This version carries its own 
 | Loader | NeoForge |
 | Java | 21 |
 | Required mods | Overgrown's Apoli and Overgrown's Origins |
-| Optional | Pehkui. Without it, AEA adds its own `/scale` command so packs that use it still work. |
+| Optional | Pehkui. Without it, AEA adds its own `/scale` command so packs that use it still work.<br>[TaCZ](/tacz/overview) and [Spell Engine](/spell_engine/overview), for their types. |
 
 ## Using an old pack
 

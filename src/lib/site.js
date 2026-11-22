@@ -15,5 +15,7 @@ export const sections = [
 	{ dir: 'powers', label: 'Powers' },
 	{ dir: 'actions', label: 'Actions' },
 	{ dir: 'conditions', label: 'Conditions' },
-	{ dir: 'features', label: 'Features' }
+	{ dir: 'features', label: 'Features' },
+	{ dir: 'tacz', label: 'TaCZ' },
+	{ dir: 'spell_engine', label: 'Spell Engine' }
 ];

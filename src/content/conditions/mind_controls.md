@@ -17,7 +17,7 @@ This type has no fields.
 {
     "type": "apoli:modify_damage_dealt",
     "bientity_condition": { "type": "aea:mind_controls", "inverted": true },
-    "modifier": { "operation": "multiply_total_multiplicative", "amount": 0.5 }
+    "modifier": { "operation": "multiply_total_multiplicative", "amount": -0.5 }
 }
 ```
 
